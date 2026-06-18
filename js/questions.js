@@ -26,9 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const keyword = this.value.toLowerCase();
 
-            const filteredQuestions = allQuestions.filter(q =>
-                q.question.toLowerCase().includes(keyword) ||
-                q.answer.join(" ").toLowerCase().includes(keyword)
+             const filteredQuestions = allQuestions.filter(q =>
+                q.question.toLowerCase().includes(keyword)
             );
 
             renderQuestions(filteredQuestions);
