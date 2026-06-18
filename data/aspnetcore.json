@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is ASP.NET Core?",
+    "answer": [
+      "ASP.NET Core is a cross-platform, open-source framework for building modern web applications.",
+      "It runs on Windows, Linux, and macOS unlike the traditional .NET Framework.",
+      "It is lightweight, modular, and supports high-performance web APIs and MVC apps.",
+      "It uses Kestrel as the default web server and supports dependency injection out of the box."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is Middleware in ASP.NET Core?",
+    "answer": [
+      "Middleware is a component in the request pipeline that handles requests and responses.",
+      "Each middleware can process the request, pass it to the next middleware, or short-circuit the pipeline.",
+      "Common middleware includes authentication, routing, CORS, and exception handling.",
+      "Middleware is configured in the Program.cs file using app.UseXxx() methods."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is Dependency Injection in ASP.NET Core?",
+    "answer": [
+      "It is a design pattern used to achieve loose coupling between classes.",
+      "Dependencies are provided from outside the class rather than created inside.",
+      "It improves testability and maintainability of the application.",
+      "In ASP.NET Core, it is configured using the built-in DI container in Program.cs."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What are the service lifetimes in ASP.NET Core DI?",
+    "answer": [
+      "Transient creates a new instance every time the service is requested.",
+      "Scoped creates one instance per HTTP request and shares it within that request.",
+      "Singleton creates one instance for the entire application lifetime.",
+      "Choosing the right lifetime is important to avoid memory leaks and concurrency issues."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between app.Use() and app.Run()?",
+    "answer": [
+      "app.Use() adds middleware that can call the next middleware in the pipeline.",
+      "app.Run() is a terminal middleware that does not call the next middleware.",
+      "app.Use() is used for chaining multiple middleware components together.",
+      "app.Run() is typically placed at the end of the pipeline to handle the final response."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "How does configuration work in ASP.NET Core?",
+    "answer": [
+      "Configuration is loaded from multiple sources like appsettings.json, environment variables, and user secrets.",
+      "The IConfiguration interface is used to access configuration values throughout the app.",
+      "The Options pattern with IOptions<T> is recommended for strongly typed configuration.",
+      "Configuration sources are loaded in order, and later sources override earlier ones."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is the Program.cs file in ASP.NET Core?",
+    "answer": [
+      "Program.cs is the entry point of an ASP.NET Core application.",
+      "It configures services, middleware, and the request pipeline.",
+      "In .NET 6 and later, it uses the minimal hosting model without a Startup class.",
+      "Builder.Services is used to register services and app.UseXxx() configures middleware."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is Kestrel in ASP.NET Core?",
+    "answer": [
+      "Kestrel is the default, cross-platform web server included with ASP.NET Core.",
+      "It is lightweight and designed for high-performance HTTP request handling.",
+      "It can be used as a standalone server or behind a reverse proxy like IIS or Nginx.",
+      "Kestrel supports HTTP/2 and HTTPS out of the box."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "How does Authentication work in ASP.NET Core?",
+    "answer": [
+      "Authentication verifies the identity of the user making the request.",
+      "ASP.NET Core supports cookie-based, JWT bearer, and external provider authentication.",
+      "It is configured using AddAuthentication() and UseAuthentication() methods.",
+      "The [Authorize] attribute is used to restrict access to authenticated users."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between Authentication and Authorization?",
+    "answer": [
+      "Authentication verifies who the user is, while authorization determines what the user can do.",
+      "Authentication happens before authorization in the middleware pipeline.",
+      "UseAuthentication() and UseAuthorization() middleware are used to enable both.",
+      "Roles and policies are common ways to implement authorization in ASP.NET Core."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is Logging in ASP.NET Core?",
+    "answer": [
+      "ASP.NET Core has a built-in logging framework accessible through ILogger<T>.",
+      "It supports multiple log levels like Information, Warning, Error, and Critical.",
+      "Log providers like Console, Debug, EventSource, and third-party loggers like Serilog can be used.",
+      "Logging is configured in appsettings.json under the Logging section."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the Options pattern in ASP.NET Core?",
+    "answer": [
+      "The Options pattern is used to bind configuration sections to strongly typed C# classes.",
+      "It uses IOptions<T>, IOptionsSnapshot<T>, or IOptionsMonitor<T> for accessing settings.",
+      "Configuration classes are registered using services.Configure<T>(Configuration.GetSection()).",
+      "It provides clean separation of configuration from application logic."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is CORS in ASP.NET Core?",
+    "answer": [
+      "CORS stands for Cross-Origin Resource Sharing and controls access from different domains.",
+      "It is configured using AddCors() in services and UseCors() in middleware.",
+      "You can define named policies to allow specific origins, methods, and headers.",
+      "CORS is essential when a frontend app on one domain calls an API on another domain."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What are Filters in ASP.NET Core?",
+    "answer": [
+      "Filters are components that run code before or after specific stages in the request pipeline.",
+      "Common filter types are Authorization, Action, Result, and Exception filters.",
+      "They can be applied globally, at the controller level, or at the action level.",
+      "Filters are useful for cross-cutting concerns like logging, validation, and error handling."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between AddSingleton, AddScoped, and AddTransient?",
+    "answer": [
+      "AddSingleton creates a single instance shared across all requests for the app lifetime.",
+      "AddScoped creates a new instance for each HTTP request but shares within the same request.",
+      "AddTransient creates a new instance every time the service is requested.",
+      "Using the wrong lifetime can cause issues like captive dependencies or thread safety problems."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is the wwwroot folder in ASP.NET Core?",
+    "answer": [
+      "wwwroot is the web root folder that serves static files like CSS, JavaScript, and images.",
+      "It is the only folder accessible directly by the browser via URL.",
+      "Static file middleware must be enabled using app.UseStaticFiles() to serve these files.",
+      "Files outside wwwroot are not publicly accessible for security reasons."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between appsettings.json and environment variables?",
+    "answer": [
+      "appsettings.json is a file-based configuration source stored with the project.",
+      "Environment variables are system-level settings ideal for sensitive data like connection strings.",
+      "Environment variables override values from appsettings.json when both are present.",
+      "appsettings.{Environment}.json allows environment-specific configuration like Development or Production."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is the IHostedService interface?",
+    "answer": [
+      "IHostedService is used to run background tasks within an ASP.NET Core application.",
+      "It has StartAsync and StopAsync methods to manage the task lifecycle.",
+      "BackgroundService is a base class that simplifies implementing long-running background tasks.",
+      "It is registered using services.AddHostedService<T>() in the DI container."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is Model Validation in ASP.NET Core?",
+    "answer": [
+      "Model validation ensures that incoming data meets defined rules before processing.",
+      "Data annotations like [Required], [MaxLength], and [Range] are used on model properties.",
+      "ModelState.IsValid is checked in the controller to verify if the model passed validation.",
+      "Custom validation attributes can be created by inheriting from ValidationAttribute."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is Health Check in ASP.NET Core?",
+    "answer": [
+      "Health checks are used to monitor the health of an application and its dependencies.",
+      "They are configured using AddHealthChecks() and MapHealthChecks() in the pipeline.",
+      "You can create custom health checks by implementing the IHealthCheck interface.",
+      "Health checks are commonly used with load balancers and container orchestrators like Kubernetes."
+    ]
+  }
+]

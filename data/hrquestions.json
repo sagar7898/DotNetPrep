@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "Tell me about yourself.",
+    "answer": [
+      "I am a .NET Developer with around 2-3 years of experience building web applications.",
+      "I have worked with C#, ASP.NET Core, Entity Framework, Web APIs, and SQL Server.",
+      "I am passionate about writing clean, maintainable code and continuously learning new technologies.",
+      "I enjoy collaborating with teams to deliver quality software that meets business requirements."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What are your strengths?",
+    "answer": [
+      "I am a quick learner and adapt well to new technologies and tools.",
+      "I have strong problem-solving skills and enjoy debugging complex issues.",
+      "I am a good team player and communicate effectively with both technical and non-technical people.",
+      "I am consistent with deadlines and take ownership of the tasks assigned to me."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What are your weaknesses?",
+    "answer": [
+      "Sometimes I spend extra time to make sure the code is clean and well-structured.",
+      "I am working on improving my presentation skills for larger team meetings.",
+      "I tend to take on too much work, but I am learning to delegate and prioritize better.",
+      "I am actively working on these areas and have seen noticeable improvement."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Can you explain your current or last project?",
+    "answer": [
+      "I worked on a web application built with ASP.NET Core, Web API, and SQL Server.",
+      "My responsibilities included developing RESTful APIs, writing LINQ queries, and implementing business logic.",
+      "I used Entity Framework Core for database operations and followed the Repository Pattern.",
+      "The project followed Agile methodology with two-week sprints and daily stand-ups."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Where do you see yourself in 5 years?",
+    "answer": [
+      "I see myself growing into a senior developer or technical lead role.",
+      "I want to deepen my expertise in cloud technologies like Azure and microservices.",
+      "I plan to contribute to architectural decisions and mentor junior developers.",
+      "I want to keep learning and stay updated with modern development practices."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Why are you looking for a job change?",
+    "answer": [
+      "I am looking for new challenges and opportunities to grow technically.",
+      "I want to work on larger-scale projects with modern technologies and best practices.",
+      "I am seeking a role that offers better career growth and learning opportunities.",
+      "I want to be part of a team that values innovation and continuous improvement."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "How do you handle pressure or tight deadlines?",
+    "answer": [
+      "I prioritize tasks based on urgency and break them into smaller manageable pieces.",
+      "I communicate openly with my team and manager about realistic timelines.",
+      "I stay focused and avoid distractions during high-pressure situations.",
+      "I have successfully delivered multiple features under tight deadlines in my previous role."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "How do you handle conflicts in a team?",
+    "answer": [
+      "I believe in open and respectful communication to resolve disagreements.",
+      "I try to understand the other person's perspective before presenting my own.",
+      "I focus on the problem rather than making it personal.",
+      "If needed, I involve a team lead or manager to mediate and find a fair solution."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What do you know about our company?",
+    "answer": [
+      "I research the company beforehand to understand its products, services, and culture.",
+      "I look at the company's technology stack and recent developments.",
+      "I check employee reviews and the company's mission and values.",
+      "I align my skills and career goals with what the company offers."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Why should we hire you?",
+    "answer": [
+      "I have relevant experience in .NET development that matches the job requirements.",
+      "I am a self-motivated developer who takes ownership of work and delivers results.",
+      "I bring a strong combination of technical skills and teamwork.",
+      "I am eager to contribute and grow with the team."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Describe a challenging technical problem you solved.",
+    "answer": [
+      "I faced a performance issue where an API endpoint was taking too long to respond.",
+      "I used SQL Profiler and execution plans to identify slow queries and missing indexes.",
+      "I optimized the queries, added proper indexes, and used AsNoTracking for read-only operations.",
+      "The response time improved significantly, and the solution was well received by the team."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "How do you stay updated with new technologies?",
+    "answer": [
+      "I follow official Microsoft documentation and .NET blogs regularly.",
+      "I watch tutorials on YouTube and take courses on platforms like Udemy.",
+      "I participate in developer communities and forums like Stack Overflow.",
+      "I also build small side projects to practice and experiment with new tools."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is your approach to learning a new technology?",
+    "answer": [
+      "I start by reading the official documentation to understand the fundamentals.",
+      "I follow hands-on tutorials and build small projects to apply what I learn.",
+      "I refer to community blogs and Stack Overflow for real-world examples.",
+      "I practice consistently and try to integrate new concepts into my daily work."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "How do you work in a team environment?",
+    "answer": [
+      "I actively participate in daily stand-ups, sprint planning, and code reviews.",
+      "I communicate clearly and share updates proactively with the team.",
+      "I am open to feedback and always willing to help teammates when they need support.",
+      "I believe teamwork leads to better solutions and faster delivery."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What development methodology are you familiar with?",
+    "answer": [
+      "I have worked with Agile methodology using Scrum framework.",
+      "We followed two-week sprints with daily stand-ups, sprint reviews, and retrospectives.",
+      "Tasks were managed using tools like Jira or Azure DevOps boards.",
+      "Agile helped us deliver features incrementally and respond to changes quickly."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What are your salary expectations?",
+    "answer": [
+      "I have researched the market rate for my role and experience level.",
+      "I am flexible and open to discussing compensation based on the role and benefits.",
+      "I value growth opportunities, learning culture, and work-life balance alongside salary.",
+      "I would like to understand the complete compensation package before giving a specific number."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Do you have any questions for us?",
+    "answer": [
+      "What does the day-to-day work look like for this role?",
+      "What technologies and tools does the team currently use?",
+      "What are the growth and learning opportunities available in this role?",
+      "How does the team handle code reviews and knowledge sharing?"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is your preferred work style: remote or in-office?",
+    "answer": [
+      "I am comfortable working in both remote and in-office environments.",
+      "I value flexibility and adapt well to the team's preferred work model.",
+      "I ensure clear communication and consistent productivity regardless of the setup.",
+      "I believe the right tools and collaboration make remote work just as effective."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Have you ever missed a deadline? How did you handle it?",
+    "answer": [
+      "There was a situation where a task took longer due to unexpected technical complexity.",
+      "I communicated early with my manager about the delay and revised the timeline.",
+      "I prioritized the critical features and delivered the most impactful parts first.",
+      "I learned to estimate better and include buffer time for unforeseen challenges."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What motivates you at work?",
+    "answer": [
+      "Solving challenging problems and seeing my code work in production motivates me.",
+      "Learning new technologies and improving my skills keeps me engaged.",
+      "Working with a supportive team and delivering meaningful features gives me satisfaction.",
+      "Recognition for good work and opportunities for growth keep me driven."
+    ]
+  }
+]

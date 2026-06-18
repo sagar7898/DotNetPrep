@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What are the different types of Joins in SQL Server?",
+    "answer": [
+      "INNER JOIN returns rows that have matching values in both tables.",
+      "LEFT JOIN returns all rows from the left table and matching rows from the right table.",
+      "RIGHT JOIN returns all rows from the right table and matching rows from the left table.",
+      "FULL OUTER JOIN returns all rows when there is a match in either table."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is a Stored Procedure in SQL Server?",
+    "answer": [
+      "A stored procedure is a precompiled collection of SQL statements stored in the database.",
+      "It improves performance because the execution plan is cached after the first run.",
+      "It accepts input and output parameters for dynamic query execution.",
+      "It enhances security by restricting direct table access and preventing SQL injection."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is an Index in SQL Server?",
+    "answer": [
+      "An index is a data structure that speeds up data retrieval from tables.",
+      "Clustered index sorts and stores the data rows physically in order and only one is allowed per table.",
+      "Non-clustered index creates a separate structure with pointers to the actual data rows.",
+      "Too many indexes can slow down INSERT, UPDATE, and DELETE operations."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between Clustered and Non-Clustered Index?",
+    "answer": [
+      "A clustered index determines the physical order of data in the table.",
+      "A non-clustered index creates a logical order with a pointer to the physical data.",
+      "A table can have only one clustered index but multiple non-clustered indexes.",
+      "The primary key creates a clustered index by default unless specified otherwise."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is a View in SQL Server?",
+    "answer": [
+      "A view is a virtual table based on a SELECT query that does not store data physically.",
+      "It simplifies complex queries by encapsulating them into a reusable named query.",
+      "Views can be used to restrict access to specific columns or rows for security.",
+      "Indexed views can materialize data for improved performance on complex joins."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is Normalization in SQL Server?",
+    "answer": [
+      "Normalization is the process of organizing data to reduce redundancy and dependency.",
+      "1NF eliminates duplicate columns, 2NF removes partial dependencies, 3NF removes transitive dependencies.",
+      "It improves data integrity and reduces storage space.",
+      "Over-normalization can lead to too many joins, so a balance is needed for performance."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is the difference between WHERE and HAVING clause?",
+    "answer": [
+      "WHERE filters rows before grouping and cannot use aggregate functions.",
+      "HAVING filters groups after the GROUP BY clause and can use aggregate functions.",
+      "WHERE is used with individual rows, while HAVING is used with grouped results.",
+      "Example: HAVING COUNT(*) > 5 filters groups with more than 5 records."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is a Primary Key and Foreign Key?",
+    "answer": [
+      "A primary key uniquely identifies each row in a table and does not allow nulls.",
+      "A foreign key is a column that references the primary key of another table.",
+      "Foreign keys enforce referential integrity between related tables.",
+      "A table can have only one primary key but multiple foreign keys."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between UNION and UNION ALL?",
+    "answer": [
+      "UNION combines results from two queries and removes duplicate rows.",
+      "UNION ALL combines results from two queries and includes all duplicates.",
+      "UNION ALL is faster because it skips the duplicate removal step.",
+      "Both require the same number of columns with compatible data types."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What are Triggers in SQL Server?",
+    "answer": [
+      "Triggers are special stored procedures that automatically execute on table events.",
+      "AFTER triggers fire after INSERT, UPDATE, or DELETE operations complete.",
+      "INSTEAD OF triggers fire in place of the original operation.",
+      "Triggers are used for auditing, enforcing business rules, and maintaining data integrity."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "answer": [
+      "DELETE removes specific rows based on a WHERE condition and can be rolled back.",
+      "TRUNCATE removes all rows from a table and resets the identity counter.",
+      "DROP removes the entire table structure and data permanently from the database.",
+      "DELETE fires triggers while TRUNCATE and DROP do not fire row-level triggers."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is a CTE (Common Table Expression)?",
+    "answer": [
+      "A CTE is a temporary named result set defined using the WITH keyword.",
+      "It improves readability by breaking complex queries into simpler parts.",
+      "CTEs can be recursive, making them useful for hierarchical data like org charts.",
+      "A CTE exists only for the duration of the query it is defined in."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is a Subquery in SQL Server?",
+    "answer": [
+      "A subquery is a query nested inside another query's SELECT, WHERE, or FROM clause.",
+      "It can return a single value, a list of values, or a table.",
+      "Correlated subqueries reference columns from the outer query and execute once per row.",
+      "Subqueries can often be replaced with JOINs for better performance."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What are Window Functions in SQL Server?",
+    "answer": [
+      "Window functions perform calculations across a set of rows related to the current row.",
+      "They use the OVER() clause with PARTITION BY and ORDER BY to define the window.",
+      "Common functions include ROW_NUMBER(), RANK(), DENSE_RANK(), and LAG().",
+      "Unlike GROUP BY, window functions do not collapse rows into groups."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is a Temp Table vs Table Variable?",
+    "answer": [
+      "Temp tables are created with # prefix and stored in the tempdb database.",
+      "Table variables are declared with @variable and stored in memory.",
+      "Temp tables support indexes and statistics, while table variables have limited optimization.",
+      "Temp tables are preferred for large datasets, and table variables for small result sets."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is Transaction in SQL Server?",
+    "answer": [
+      "A transaction is a group of SQL operations that execute as a single unit of work.",
+      "It follows ACID properties: Atomicity, Consistency, Isolation, and Durability.",
+      "BEGIN TRANSACTION, COMMIT, and ROLLBACK are used to manage transactions.",
+      "If any operation fails, ROLLBACK undoes all changes made within the transaction."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between CHAR and VARCHAR?",
+    "answer": [
+      "CHAR is a fixed-length data type that pads spaces to fill the defined length.",
+      "VARCHAR is a variable-length data type that uses only the space needed.",
+      "CHAR is faster for fixed-size data like country codes or status flags.",
+      "VARCHAR is preferred for variable-length data like names and addresses."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is an Execution Plan in SQL Server?",
+    "answer": [
+      "An execution plan shows how SQL Server will execute a query step by step.",
+      "It helps identify performance bottlenecks like table scans and missing indexes.",
+      "The estimated plan shows the expected execution without running the query.",
+      "The actual plan shows the real execution with runtime statistics and row counts."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is COALESCE function in SQL Server?",
+    "answer": [
+      "COALESCE returns the first non-null value from a list of expressions.",
+      "It is used to handle null values by providing fallback defaults.",
+      "Example: COALESCE(PhoneNumber, Email, 'N/A') returns the first available contact.",
+      "It is preferred over ISNULL because it supports multiple parameters and is ANSI standard."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the difference between INNER JOIN and CROSS JOIN?",
+    "answer": [
+      "INNER JOIN returns only rows where the join condition matches in both tables.",
+      "CROSS JOIN returns the Cartesian product of both tables with no join condition.",
+      "CROSS JOIN produces rows equal to the product of row counts of both tables.",
+      "CROSS JOIN is rarely used in practice and mainly for generating combinations."
+    ]
+  }
+]

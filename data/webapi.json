@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is Web API?",
+    "answer": [
+      "Web API is a framework for building HTTP-based RESTful services in .NET.",
+      "It allows applications to communicate over HTTP using standard methods like GET, POST, PUT, DELETE.",
+      "It returns data in JSON or XML format, making it ideal for client-server communication.",
+      "In ASP.NET Core, Web API controllers inherit from ControllerBase and use the [ApiController] attribute."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is REST and its principles?",
+    "answer": [
+      "REST stands for Representational State Transfer, an architectural style for designing APIs.",
+      "It is stateless, meaning each request contains all the information needed to process it.",
+      "Resources are identified by URIs and manipulated using standard HTTP methods.",
+      "REST APIs should return proper HTTP status codes to indicate success or failure."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What are the common HTTP methods used in Web API?",
+    "answer": [
+      "GET is used to retrieve data from the server without modifying it.",
+      "POST is used to create a new resource on the server.",
+      "PUT is used to update an existing resource entirely, and PATCH for partial updates.",
+      "DELETE is used to remove a resource from the server."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What are HTTP Status Codes commonly used in Web API?",
+    "answer": [
+      "200 OK means the request was successful, and 201 Created means a resource was created.",
+      "400 Bad Request indicates invalid input, and 401 Unauthorized means authentication failed.",
+      "404 Not Found means the requested resource does not exist.",
+      "500 Internal Server Error indicates an unexpected error occurred on the server."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is JWT Authentication in Web API?",
+    "answer": [
+      "JWT stands for JSON Web Token, a compact token format used for stateless authentication.",
+      "It consists of three parts: Header, Payload, and Signature separated by dots.",
+      "The server generates a JWT upon login, and the client sends it in the Authorization header.",
+      "JWT is validated on each request without needing server-side session storage."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the [ApiController] attribute?",
+    "answer": [
+      "[ApiController] is applied to a controller to enable API-specific behaviors.",
+      "It enables automatic model validation and returns 400 for invalid model state.",
+      "It enforces attribute routing and requires routes to be defined on the controller.",
+      "It simplifies binding by automatically inferring [FromBody] for complex types."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is Content Negotiation in Web API?",
+    "answer": [
+      "Content negotiation is the process of selecting the response format based on the client's request.",
+      "The client specifies the desired format using the Accept header like application/json or application/xml.",
+      "ASP.NET Core returns JSON by default and can be configured to support XML.",
+      "Custom formatters can be added for other content types as needed."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is API Versioning in Web API?",
+    "answer": [
+      "API versioning allows maintaining multiple versions of an API without breaking existing clients.",
+      "Common strategies include URL versioning (/api/v1/), query string, and header-based versioning.",
+      "The Microsoft.AspNetCore.Mvc.Versioning NuGet package simplifies versioning setup.",
+      "URL versioning is the most commonly used approach in real projects."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between Web API and MVC?",
+    "answer": [
+      "Web API is designed for building HTTP services that return data like JSON or XML.",
+      "MVC is designed for building web applications that return HTML views.",
+      "Web API controllers inherit from ControllerBase, while MVC controllers inherit from Controller.",
+      "In ASP.NET Core, both can coexist in the same application."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is Swagger in Web API?",
+    "answer": [
+      "Swagger is a tool that auto-generates interactive API documentation from your code.",
+      "It provides a UI to test API endpoints directly from the browser.",
+      "In ASP.NET Core, it is added using the Swashbuckle.AspNetCore NuGet package.",
+      "It reads XML comments and attributes to generate detailed API descriptions."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "How do you handle exceptions globally in Web API?",
+    "answer": [
+      "Global exception handling is done using middleware or exception filters.",
+      "UseExceptionHandler middleware catches unhandled exceptions and returns a consistent error response.",
+      "Custom exception middleware can be created for logging and formatting error responses.",
+      "The ProblemDetails class provides a standard format for API error responses."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between [FromBody] and [FromQuery]?",
+    "answer": [
+      "[FromBody] binds data from the request body, typically used with POST and PUT requests.",
+      "[FromQuery] binds data from the URL query string parameters.",
+      "[FromBody] is used for complex objects like JSON payloads.",
+      "[FromQuery] is used for simple values like filters, page numbers, and search terms."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is Rate Limiting in Web API?",
+    "answer": [
+      "Rate limiting controls the number of requests a client can make within a time period.",
+      "It prevents abuse and protects API resources from being overwhelmed.",
+      "ASP.NET Core 7+ has built-in rate limiting middleware with fixed window and sliding window algorithms.",
+      "Common strategies include per-IP, per-user, and per-endpoint rate limits."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is CORS and why is it needed in Web API?",
+    "answer": [
+      "CORS stands for Cross-Origin Resource Sharing and allows APIs to be called from different domains.",
+      "Browsers block cross-origin requests by default for security reasons.",
+      "CORS is configured in Program.cs using AddCors() and UseCors() middleware.",
+      "You can allow specific origins, HTTP methods, and headers through CORS policies."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between PUT and PATCH?",
+    "answer": [
+      "PUT replaces the entire resource with the provided data.",
+      "PATCH applies partial updates to a resource, modifying only the specified fields.",
+      "PUT is idempotent, meaning multiple identical requests produce the same result.",
+      "PATCH is preferred when updating only a few fields to reduce payload size."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is Minimal API in ASP.NET Core?",
+    "answer": [
+      "Minimal APIs allow building HTTP endpoints with minimal code and without controllers.",
+      "They use app.MapGet(), app.MapPost(), and similar methods directly in Program.cs.",
+      "Minimal APIs are ideal for microservices and small, lightweight APIs.",
+      "They still support dependency injection, validation, and authentication."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "How do you implement pagination in Web API?",
+    "answer": [
+      "Pagination is implemented by accepting page number and page size as query parameters.",
+      "Use Skip() and Take() LINQ methods to fetch only the required subset of data.",
+      "Return metadata like total count, current page, and total pages in the response.",
+      "Pagination improves performance by avoiding loading large datasets at once."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is the difference between ActionResult<T> and IActionResult?",
+    "answer": [
+      "IActionResult is a non-generic type that can return any type of action result.",
+      "ActionResult<T> is a generic type that provides type information for Swagger documentation.",
+      "ActionResult<T> allows returning both the specific type and different status codes.",
+      "ActionResult<T> is preferred in Web APIs for better API documentation and type safety."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is the role of DTOs in Web API?",
+    "answer": [
+      "DTO stands for Data Transfer Object, used to shape data sent to or from the API.",
+      "DTOs prevent exposing internal entity models directly to the client.",
+      "They help control which properties are included in the API response.",
+      "AutoMapper or manual mapping is used to convert between entities and DTOs."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "How do you secure a Web API?",
+    "answer": [
+      "Use HTTPS to encrypt data in transit between client and server.",
+      "Implement authentication using JWT tokens or OAuth 2.0 for identity verification.",
+      "Apply authorization using [Authorize] attribute with roles or policies.",
+      "Validate all inputs, implement rate limiting, and use CORS to restrict access."
+    ]
+  }
+]

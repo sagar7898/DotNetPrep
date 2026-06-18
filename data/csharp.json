@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between value types and reference types in C#?",
+    "answer": [
+      "Value types store data directly in memory and are stored on the stack.",
+      "Reference types store a reference to the memory location and are stored on the heap.",
+      "Examples of value types are int, float, bool, struct, and enum.",
+      "Examples of reference types are class, string, array, and delegate."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is Boxing and Unboxing in C#?",
+    "answer": [
+      "Boxing is the process of converting a value type to an object type.",
+      "Unboxing is the process of extracting the value type from the object.",
+      "Boxing is implicit while unboxing is explicit and requires casting.",
+      "Excessive boxing and unboxing can cause performance overhead."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What are the access modifiers in C#?",
+    "answer": [
+      "C# has five access modifiers: public, private, protected, internal, and protected internal.",
+      "Public makes members accessible from anywhere in the application.",
+      "Private restricts access to within the same class only.",
+      "Internal limits access to the same assembly, while protected allows access in derived classes."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between String and StringBuilder?",
+    "answer": [
+      "String is immutable, meaning every modification creates a new object in memory.",
+      "StringBuilder is mutable and modifies the same object without creating new ones.",
+      "StringBuilder is more efficient for frequent string concatenation operations.",
+      "String is from System namespace while StringBuilder is from System.Text namespace."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between abstract class and interface?",
+    "answer": [
+      "An abstract class can have both abstract and non-abstract methods with implementation.",
+      "An interface only declares method signatures and properties without implementation (before C# 8).",
+      "A class can inherit only one abstract class but can implement multiple interfaces.",
+      "Abstract classes can have constructors and fields, but interfaces cannot."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What are delegates in C#?",
+    "answer": [
+      "A delegate is a type-safe function pointer that holds a reference to a method.",
+      "Delegates are used to pass methods as parameters to other methods.",
+      "They are the foundation for events and callback mechanisms in C#.",
+      "Common built-in delegates are Action, Func, and Predicate."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is the difference between const and readonly?",
+    "answer": [
+      "Const values are set at compile time and cannot be changed after declaration.",
+      "Readonly values are set at runtime and can be assigned in the constructor.",
+      "Const is implicitly static, while readonly can be instance-level or static.",
+      "Const supports only primitive types, whereas readonly can hold any type."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is the difference between ref and out keywords?",
+    "answer": [
+      "Both ref and out pass arguments by reference instead of by value.",
+      "Ref requires the variable to be initialized before passing to the method.",
+      "Out does not require initialization but must be assigned inside the method.",
+      "Out is commonly used when a method needs to return multiple values."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What are generics in C#?",
+    "answer": [
+      "Generics allow you to define classes, methods, and interfaces with a placeholder type.",
+      "They provide type safety by catching type errors at compile time.",
+      "Generics improve code reusability without boxing or unboxing overhead.",
+      "Common examples are List<T>, Dictionary<TKey, TValue>, and custom generic methods."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between IEnumerable and IQueryable?",
+    "answer": [
+      "IEnumerable is used for in-memory collection querying using LINQ to Objects.",
+      "IQueryable is used for out-of-memory querying like databases using LINQ to SQL.",
+      "IEnumerable executes queries on the client side, loading all data first.",
+      "IQueryable builds expression trees and executes queries on the server side."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is async and await in C#?",
+    "answer": [
+      "Async and await are used to write asynchronous code in a readable, synchronous style.",
+      "The async keyword marks a method as asynchronous and allows the use of await.",
+      "The await keyword pauses execution until the awaited task completes.",
+      "They help improve application performance by not blocking the main thread."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between Task and Thread in C#?",
+    "answer": [
+      "Thread is a lower-level concept that directly creates an OS thread.",
+      "Task is a higher-level abstraction that uses the thread pool for execution.",
+      "Task supports async/await pattern and is easier to use for asynchronous operations.",
+      "Task provides better performance as it reuses threads from the thread pool."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is Nullable type in C#?",
+    "answer": [
+      "Nullable types allow value types to hold a null value in addition to their normal range.",
+      "They are declared using the ? syntax, like int? or bool?.",
+      "The HasValue property checks if a nullable type has a value assigned.",
+      "The Value property retrieves the actual value, and GetValueOrDefault provides a fallback."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between throw and throw ex?",
+    "answer": [
+      "throw rethrows the current exception and preserves the original stack trace.",
+      "throw ex resets the stack trace to the current method, losing the original trace.",
+      "Using throw is recommended in catch blocks to maintain debugging information.",
+      "throw ex should be avoided unless you intentionally want to hide the original stack trace."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the using statement in C#?",
+    "answer": [
+      "The using statement ensures proper disposal of objects that implement IDisposable.",
+      "It automatically calls the Dispose method when the block execution completes.",
+      "It is commonly used with database connections, file streams, and HTTP clients.",
+      "It helps prevent memory leaks by releasing unmanaged resources promptly."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What are extension methods in C#?",
+    "answer": [
+      "Extension methods allow adding new methods to existing types without modifying them.",
+      "They are defined as static methods in a static class with the this keyword on the first parameter.",
+      "They appear as instance methods on the extended type when used.",
+      "LINQ methods like Where, Select, and OrderBy are implemented as extension methods."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between == and .Equals() in C#?",
+    "answer": [
+      "== is an operator that compares values for value types and references for reference types.",
+      ".Equals() is a method that compares the content or value of two objects.",
+      "For strings, both == and .Equals() compare values because == is overloaded.",
+      "You can override .Equals() in custom classes to define your own comparison logic."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is a sealed class in C#?",
+    "answer": [
+      "A sealed class is a class that cannot be inherited by other classes.",
+      "It is used to prevent further derivation and restrict the class hierarchy.",
+      "Sealed classes can improve performance as the compiler can optimize method calls.",
+      "The String class in C# is a common example of a sealed class."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is the difference between Array and ArrayList in C#?",
+    "answer": [
+      "Array is strongly typed and stores elements of a fixed type and size.",
+      "ArrayList is not strongly typed and can store elements of different types.",
+      "Array provides better performance as it avoids boxing and unboxing.",
+      "In modern C#, List<T> is preferred over ArrayList for type safety and performance."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the Garbage Collector in C#?",
+    "answer": [
+      "The Garbage Collector automatically manages memory by reclaiming unused objects.",
+      "It runs in the background and frees memory occupied by objects no longer referenced.",
+      "It uses a generational approach with Gen 0, Gen 1, and Gen 2 for efficiency.",
+      "You can force garbage collection using GC.Collect(), but it is generally not recommended."
+    ]
+  }
+]

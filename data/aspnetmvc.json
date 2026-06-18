@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is the MVC pattern?",
+    "answer": [
+      "MVC stands for Model-View-Controller, a design pattern for web applications.",
+      "Model represents the data and business logic of the application.",
+      "View is responsible for rendering the user interface to the browser.",
+      "Controller handles user input, processes requests, and returns the appropriate view."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is Routing in ASP.NET MVC?",
+    "answer": [
+      "Routing maps incoming URLs to specific controller actions in the application.",
+      "Convention-based routing is defined in Program.cs using MapControllerRoute.",
+      "Attribute routing uses [Route] and [HttpGet] attributes directly on controllers and actions.",
+      "The default route pattern is {controller=Home}/{action=Index}/{id?}."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between ViewBag, ViewData, and TempData?",
+    "answer": [
+      "ViewBag is a dynamic property that passes data from controller to view for the current request.",
+      "ViewData is a dictionary that also passes data from controller to view for the current request.",
+      "TempData persists data across redirects and uses session or cookies for storage.",
+      "ViewBag and ViewData do not survive redirects, but TempData does."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is Model Binding in ASP.NET MVC?",
+    "answer": [
+      "Model binding automatically maps HTTP request data to action method parameters.",
+      "It extracts data from form fields, query strings, route data, and request body.",
+      "Complex types are bound by matching property names with the incoming data keys.",
+      "The [FromBody], [FromQuery], and [FromRoute] attributes control the binding source."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What are Action Results in ASP.NET MVC?",
+    "answer": [
+      "Action results represent the response returned by a controller action method.",
+      "Common types include ViewResult, JsonResult, RedirectResult, and ContentResult.",
+      "ViewResult renders a Razor view, while JsonResult returns JSON-formatted data.",
+      "RedirectToAction is used to redirect the user to another action method."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is Razor View Engine?",
+    "answer": [
+      "Razor is a markup syntax that allows embedding C# code in HTML views.",
+      "It uses @ symbol to switch from HTML to C# code within the view.",
+      "Razor views have .cshtml extension and support layouts, partial views, and sections.",
+      "It provides a clean and readable way to generate dynamic HTML content."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is a Partial View in ASP.NET MVC?",
+    "answer": [
+      "A partial view is a reusable view that renders a portion of the page.",
+      "It does not have its own layout and is rendered inside a parent view.",
+      "It is invoked using Html.Partial(), Html.RenderPartial(), or the <partial> tag helper.",
+      "Partial views help avoid code duplication for common UI elements like headers and footers."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is _Layout.cshtml in ASP.NET MVC?",
+    "answer": [
+      "_Layout.cshtml is a shared layout page that provides a consistent structure for all views.",
+      "It contains common HTML like header, footer, navigation, and CSS/JS references.",
+      "@RenderBody() is used to inject the content of individual views into the layout.",
+      "The layout is set in _ViewStart.cshtml to apply it automatically to all views."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What are Tag Helpers in ASP.NET Core MVC?",
+    "answer": [
+      "Tag Helpers are server-side components that generate and modify HTML elements in Razor views.",
+      "They look like standard HTML attributes, making views more readable than Html Helpers.",
+      "Common tag helpers include asp-controller, asp-action, asp-for, and asp-validation-for.",
+      "Custom tag helpers can be created by inheriting from the TagHelper base class."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between Html.Partial and Html.RenderPartial?",
+    "answer": [
+      "Html.Partial returns an MvcHtmlString and renders the partial view as a string.",
+      "Html.RenderPartial writes directly to the response stream and returns void.",
+      "RenderPartial is slightly faster because it avoids creating an intermediate string.",
+      "Html.Partial is used with @, while RenderPartial is used within a @{ } code block."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What are Areas in ASP.NET MVC?",
+    "answer": [
+      "Areas are used to organize a large MVC application into smaller functional sections.",
+      "Each area has its own controllers, views, and models folder structure.",
+      "Areas are registered using the [Area] attribute on controllers.",
+      "They help maintain separation of concerns in applications with multiple modules."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What are Action Filters in ASP.NET MVC?",
+    "answer": [
+      "Action filters execute code before or after a controller action is executed.",
+      "They implement the IActionFilter interface with OnActionExecuting and OnActionExecuted methods.",
+      "Common uses include logging, authorization, caching, and exception handling.",
+      "Filters can be applied at the action, controller, or global level."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is the _ViewImports.cshtml file?",
+    "answer": [
+      "_ViewImports.cshtml is used to declare common namespaces and tag helpers for all views.",
+      "It reduces repetitive @using statements in individual view files.",
+      "The @addTagHelper directive is commonly placed here to enable built-in tag helpers.",
+      "It is placed in the Views folder and applies to all views in that folder and subfolders."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between Strongly Typed View and Dynamic View?",
+    "answer": [
+      "A strongly typed view uses @model directive to bind to a specific model class.",
+      "It provides compile-time checking and IntelliSense support in the view.",
+      "A dynamic view uses ViewBag or ViewData without a specific model, losing type safety.",
+      "Strongly typed views are preferred because they reduce runtime errors."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is Attribute Routing in ASP.NET MVC?",
+    "answer": [
+      "Attribute routing defines routes directly on controller actions using [Route] attributes.",
+      "It provides more control and readability compared to convention-based routing.",
+      "Route parameters are defined using curly braces like [Route(\"api/products/{id}\")].",
+      "It is preferred in Web APIs and complex routing scenarios."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is the role of the Controller in MVC?",
+    "answer": [
+      "The Controller acts as the intermediary between the Model and the View.",
+      "It receives user requests, processes business logic, and returns responses.",
+      "Controller actions return ActionResult types like View, Json, or Redirect.",
+      "Controllers inherit from the Controller base class in ASP.NET Core."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between RedirectToAction and RedirectToRoute?",
+    "answer": [
+      "RedirectToAction redirects to a specific action method in a controller.",
+      "RedirectToRoute redirects to a named route defined in the routing configuration.",
+      "Both return a 302 HTTP redirect response to the browser.",
+      "RedirectToAction is more commonly used for simple controller-to-controller navigation."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is View Component in ASP.NET Core MVC?",
+    "answer": [
+      "View Components are reusable components similar to partial views but with their own logic.",
+      "They have an InvokeAsync method that returns a view with its own model.",
+      "They do not depend on model binding or HTTP request data like controllers.",
+      "View Components are ideal for rendering sidebar menus, shopping carts, or login panels."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is the difference between GET and POST in MVC?",
+    "answer": [
+      "GET retrieves data from the server and appends parameters in the URL query string.",
+      "POST sends data in the request body and is used for form submissions and data modifications.",
+      "GET requests are idempotent and can be bookmarked, while POST requests cannot.",
+      "In MVC, [HttpGet] and [HttpPost] attributes are used to restrict actions to specific methods."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is Anti-Forgery Token in ASP.NET MVC?",
+    "answer": [
+      "Anti-forgery tokens prevent Cross-Site Request Forgery (CSRF) attacks.",
+      "A hidden token is generated in the form using @Html.AntiForgeryToken() or asp-antiforgery.",
+      "The [ValidateAntiForgeryToken] attribute on the action validates the token on submission.",
+      "It ensures the form submission originated from the same application and not a malicious site."
+    ]
+  }
+]

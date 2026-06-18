@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is Object-Oriented Programming?",
+    "answer": [
+      "OOP is a programming paradigm based on the concept of objects and classes.",
+      "It organizes code into reusable structures that model real-world entities.",
+      "The four main pillars are Encapsulation, Inheritance, Polymorphism, and Abstraction.",
+      "C# is a fully object-oriented programming language that supports all OOP concepts."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is Encapsulation?",
+    "answer": [
+      "Encapsulation is the practice of hiding internal data and exposing only necessary functionality.",
+      "It is achieved using access modifiers like private, protected, and public.",
+      "Properties with getters and setters are used to control access to private fields.",
+      "It protects object integrity by preventing unauthorized direct access to data."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is Inheritance?",
+    "answer": [
+      "Inheritance allows a class to acquire properties and methods of another class.",
+      "The derived class inherits from the base class and can extend or override its behavior.",
+      "C# supports single inheritance for classes but allows multiple interface implementation.",
+      "It promotes code reusability and establishes a parent-child relationship between classes."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is Polymorphism?",
+    "answer": [
+      "Polymorphism means the ability of an object to take multiple forms.",
+      "Compile-time polymorphism is achieved through method overloading.",
+      "Runtime polymorphism is achieved through method overriding using virtual and override keywords.",
+      "It allows calling the same method on different objects and getting different behavior."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is Abstraction?",
+    "answer": [
+      "Abstraction hides complex implementation details and shows only essential features.",
+      "It is achieved using abstract classes and interfaces in C#.",
+      "Abstract classes can have both abstract methods and concrete implementations.",
+      "It helps reduce complexity and focus on what an object does rather than how it does it."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the difference between method overloading and method overriding?",
+    "answer": [
+      "Method overloading defines multiple methods with the same name but different parameters.",
+      "Method overriding redefines a base class method in a derived class using override keyword.",
+      "Overloading is resolved at compile time, while overriding is resolved at runtime.",
+      "Overloading requires different signatures, while overriding requires the same signature."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is an Abstract Class?",
+    "answer": [
+      "An abstract class is a class that cannot be instantiated directly.",
+      "It can contain abstract methods without implementation and regular methods with implementation.",
+      "Derived classes must provide implementations for all abstract methods.",
+      "It is used to define a common base with shared functionality for related classes."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is an Interface?",
+    "answer": [
+      "An interface defines a contract of methods and properties that a class must implement.",
+      "It contains only method signatures without any implementation (before C# 8 default implementations).",
+      "A class can implement multiple interfaces, enabling multiple inheritance of behavior.",
+      "Interfaces are used to achieve loose coupling and dependency injection."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the SOLID principle?",
+    "answer": [
+      "S - Single Responsibility Principle: A class should have only one reason to change.",
+      "O - Open/Closed Principle: Classes should be open for extension but closed for modification.",
+      "L - Liskov Substitution: Derived classes should be substitutable for their base classes.",
+      "I and D - Interface Segregation and Dependency Inversion promote focused interfaces and abstractions."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the Single Responsibility Principle?",
+    "answer": [
+      "A class should have only one reason to change, meaning it should do only one thing.",
+      "It keeps classes focused, making them easier to understand and maintain.",
+      "For example, a UserService should handle user logic, not email sending.",
+      "Violating SRP leads to tightly coupled code that is hard to test and modify."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is the Open/Closed Principle?",
+    "answer": [
+      "Classes should be open for extension but closed for modification.",
+      "New functionality should be added by extending the class, not changing existing code.",
+      "This is achieved using inheritance, interfaces, and abstract classes.",
+      "It reduces the risk of breaking existing functionality when adding new features."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between class and object?",
+    "answer": [
+      "A class is a blueprint or template that defines properties and methods.",
+      "An object is an instance of a class created at runtime using the new keyword.",
+      "A class is defined once, but multiple objects can be created from it.",
+      "Classes define the structure, and objects hold the actual data in memory."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is a Constructor in C#?",
+    "answer": [
+      "A constructor is a special method that initializes an object when it is created.",
+      "It has the same name as the class and does not have a return type.",
+      "A default constructor takes no parameters, while a parameterized constructor accepts arguments.",
+      "Static constructors initialize static members and run only once for the class."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the difference between virtual and abstract methods?",
+    "answer": [
+      "Virtual methods have a default implementation in the base class and can be overridden.",
+      "Abstract methods have no implementation and must be overridden in the derived class.",
+      "Virtual methods use the virtual keyword, and abstract methods use the abstract keyword.",
+      "A class with abstract methods must be declared as an abstract class."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between Composition and Inheritance?",
+    "answer": [
+      "Inheritance creates an 'is-a' relationship where a derived class extends a base class.",
+      "Composition creates a 'has-a' relationship where a class contains instances of other classes.",
+      "Composition is more flexible and preferred because it avoids tight coupling.",
+      "The design principle 'favor composition over inheritance' promotes loosely coupled designs."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is a Static Class in C#?",
+    "answer": [
+      "A static class cannot be instantiated and contains only static members.",
+      "All methods and properties must be declared as static.",
+      "It is commonly used for utility or helper classes like Math or File.",
+      "Static classes are loaded once into memory and shared across the application."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the this keyword in C#?",
+    "answer": [
+      "The this keyword refers to the current instance of the class.",
+      "It is used to distinguish between class fields and method parameters with the same name.",
+      "It can be used to pass the current object as a parameter to other methods.",
+      "In constructors, this() can be used to call another constructor in the same class."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is Coupling and Cohesion?",
+    "answer": [
+      "Coupling is the degree of dependency between two classes or modules.",
+      "Low coupling means classes are independent and changes in one do not affect others.",
+      "Cohesion measures how related the responsibilities within a single class are.",
+      "Good design aims for low coupling and high cohesion for maintainable code."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is the Liskov Substitution Principle?",
+    "answer": [
+      "Derived classes should be substitutable for their base classes without breaking the application.",
+      "If a method works with a base class, it should also work with any derived class.",
+      "Violating this principle leads to unexpected behavior and fragile code.",
+      "Example: A Square should not inherit from Rectangle if it changes the behavior of SetWidth."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the Dependency Inversion Principle?",
+    "answer": [
+      "High-level modules should not depend on low-level modules; both should depend on abstractions.",
+      "Abstractions should not depend on details; details should depend on abstractions.",
+      "It is implemented using interfaces and dependency injection in C#.",
+      "It promotes loose coupling and makes the codebase easier to test and extend."
+    ]
+  }
+]

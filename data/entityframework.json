@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is Entity Framework Core?",
+    "answer": [
+      "Entity Framework Core is a lightweight, open-source ORM for .NET applications.",
+      "It allows developers to work with databases using C# objects instead of raw SQL.",
+      "It supports multiple database providers like SQL Server, PostgreSQL, and SQLite.",
+      "EF Core handles CRUD operations, change tracking, and query generation automatically."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is DbContext in Entity Framework?",
+    "answer": [
+      "DbContext is the primary class that manages database connections and operations.",
+      "It represents a session with the database and provides methods for querying and saving data.",
+      "It contains DbSet<T> properties that represent tables in the database.",
+      "DbContext is registered as a scoped service in the DI container using AddDbContext<T>()."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is DbSet in Entity Framework?",
+    "answer": [
+      "DbSet<T> represents a collection of entities that maps to a database table.",
+      "It provides methods like Add, Remove, Find, and LINQ queries for data operations.",
+      "Each DbSet is defined as a property in the DbContext class.",
+      "DbSet is the main entry point for querying and saving instances of an entity."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What are Migrations in Entity Framework?",
+    "answer": [
+      "Migrations allow you to incrementally update the database schema based on model changes.",
+      "Add-Migration creates a migration file with the schema changes in C# code.",
+      "Update-Database applies pending migrations to the actual database.",
+      "Migrations keep the database schema in sync with the EF Core model."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is Code First approach in Entity Framework?",
+    "answer": [
+      "Code First means you define your database schema using C# classes and properties.",
+      "EF Core generates the database tables based on these classes using migrations.",
+      "Data annotations and Fluent API are used to configure mappings and constraints.",
+      "It is the most common approach in new ASP.NET Core projects."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the difference between Code First and Database First?",
+    "answer": [
+      "Code First creates the database from C# entity classes and migrations.",
+      "Database First generates C# entity classes from an existing database using scaffolding.",
+      "Code First gives more control over the model and is preferred for new projects.",
+      "Database First is useful when working with legacy or pre-existing databases."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is Change Tracking in Entity Framework?",
+    "answer": [
+      "Change tracking monitors modifications to entities loaded from the database.",
+      "EF Core tracks entity states like Added, Modified, Deleted, and Unchanged.",
+      "When SaveChanges() is called, only tracked changes are persisted to the database.",
+      "AsNoTracking() can be used for read-only queries to improve performance."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is Lazy Loading vs Eager Loading vs Explicit Loading?",
+    "answer": [
+      "Lazy Loading loads related data automatically when the navigation property is accessed.",
+      "Eager Loading loads related data upfront using Include() and ThenInclude() methods.",
+      "Explicit Loading loads related data on demand using Entry().Reference() or Entry().Collection().",
+      "Eager Loading is preferred in most cases to avoid the N+1 query problem."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the N+1 query problem in Entity Framework?",
+    "answer": [
+      "N+1 occurs when one query loads parent entities and N additional queries load related data.",
+      "It happens with Lazy Loading when related entities are accessed in a loop.",
+      "It causes serious performance issues due to excessive database round trips.",
+      "It is solved by using Eager Loading with Include() to load related data in a single query."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is Fluent API in Entity Framework?",
+    "answer": [
+      "Fluent API is used to configure entity mappings and relationships in OnModelCreating method.",
+      "It provides more configuration options than data annotations.",
+      "It is used to set primary keys, foreign keys, indexes, and table names.",
+      "Fluent API takes precedence over data annotations when both are defined."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is AsNoTracking() in Entity Framework?",
+    "answer": [
+      "AsNoTracking() disables change tracking for entities returned by a query.",
+      "It improves performance for read-only operations since EF skips snapshot tracking.",
+      "Entities returned with AsNoTracking cannot be updated without reattaching.",
+      "It is commonly used in GET API endpoints where data is only read and returned."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between Add and Attach in Entity Framework?",
+    "answer": [
+      "Add marks the entity state as Added and inserts it as a new row on SaveChanges.",
+      "Attach marks the entity state as Unchanged, assuming it already exists in the database.",
+      "Attach is used when you want to update specific properties of an existing entity.",
+      "After Attach, you need to manually set properties as modified for updates."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What are Navigation Properties in Entity Framework?",
+    "answer": [
+      "Navigation properties define relationships between entities like one-to-many or many-to-many.",
+      "They allow accessing related data through object references instead of joins.",
+      "A reference navigation holds a single related entity, and a collection holds multiple.",
+      "EF Core uses navigation properties to generate SQL joins when querying related data."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the SaveChanges() method?",
+    "answer": [
+      "SaveChanges() persists all tracked changes to the database in a single transaction.",
+      "It processes Added, Modified, and Deleted entities and generates the appropriate SQL.",
+      "It returns the number of rows affected in the database.",
+      "SaveChangesAsync() is the async version and is preferred in web applications."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What are Data Annotations in Entity Framework?",
+    "answer": [
+      "Data annotations are attributes applied to entity properties to configure database mappings.",
+      "Common annotations include [Key], [Required], [MaxLength], and [Table].",
+      "[ForeignKey] defines the foreign key relationship between entities.",
+      "They provide a simple way to configure the model without Fluent API."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is the Repository Pattern with Entity Framework?",
+    "answer": [
+      "The Repository Pattern abstracts data access logic from the business layer.",
+      "It provides a clean API for CRUD operations without exposing DbContext directly.",
+      "It improves testability by allowing mock repositories in unit tests.",
+      "A generic repository with IRepository<T> is commonly used to reduce code duplication."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is Unit of Work Pattern in Entity Framework?",
+    "answer": [
+      "Unit of Work manages multiple repository operations as a single transaction.",
+      "It ensures that all changes across repositories are committed or rolled back together.",
+      "DbContext in EF Core already implements the Unit of Work pattern internally.",
+      "It is often combined with the Repository Pattern for better transaction management."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "How do you handle concurrency in Entity Framework?",
+    "answer": [
+      "Concurrency conflicts occur when two users try to update the same record simultaneously.",
+      "EF Core supports optimistic concurrency using [ConcurrencyCheck] or [Timestamp] attributes.",
+      "A DbUpdateConcurrencyException is thrown when a concurrency conflict is detected.",
+      "The conflict can be resolved by reloading the entity or merging changes."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is Global Query Filter in Entity Framework?",
+    "answer": [
+      "Global query filters automatically apply a where clause to all queries for an entity.",
+      "They are configured in OnModelCreating using HasQueryFilter() method.",
+      "Common use cases include soft delete filtering and multi-tenant data isolation.",
+      "Filters can be ignored for specific queries using IgnoreQueryFilters()."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is Raw SQL execution in Entity Framework?",
+    "answer": [
+      "EF Core allows executing raw SQL queries using FromSqlRaw() and ExecuteSqlRaw() methods.",
+      "FromSqlRaw() returns entity results and can be combined with LINQ for further filtering.",
+      "ExecuteSqlRaw() is used for non-query commands like INSERT, UPDATE, and DELETE.",
+      "Always use parameterized queries to prevent SQL injection attacks."
+    ]
+  }
+]

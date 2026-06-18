@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is LINQ?",
+    "answer": [
+      "LINQ stands for Language Integrated Query, a feature in C# for querying data.",
+      "It provides a consistent syntax to query collections, databases, XML, and more.",
+      "LINQ queries can be written using query syntax or method syntax.",
+      "It brings compile-time type checking and IntelliSense support to data queries."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between Deferred and Immediate Execution in LINQ?",
+    "answer": [
+      "Deferred execution means the query is not executed until the results are iterated.",
+      "Methods like Where(), Select(), and OrderBy() use deferred execution.",
+      "Immediate execution runs the query right away and returns the result.",
+      "Methods like ToList(), Count(), First(), and ToArray() trigger immediate execution."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the Select operator in LINQ?",
+    "answer": [
+      "Select is a projection operator that transforms each element in a collection.",
+      "It maps each source element to a new form, like selecting specific properties.",
+      "It is equivalent to the SELECT clause in SQL queries.",
+      "Example: employees.Select(e => e.Name) returns only the Name property of each employee."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is the Where operator in LINQ?",
+    "answer": [
+      "Where is a filtering operator that returns elements matching a specified condition.",
+      "It takes a predicate function that returns true or false for each element.",
+      "It uses deferred execution, meaning it filters only when results are enumerated.",
+      "Example: numbers.Where(n => n > 5) returns only numbers greater than 5."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is the GroupBy operator in LINQ?",
+    "answer": [
+      "GroupBy groups elements of a collection based on a specified key.",
+      "It returns an IEnumerable of IGrouping<TKey, TElement> with a Key property.",
+      "It is similar to the GROUP BY clause in SQL.",
+      "Example: employees.GroupBy(e => e.Department) groups employees by their department."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the difference between First() and FirstOrDefault()?",
+    "answer": [
+      "First() returns the first element that matches the condition or throws an exception if none found.",
+      "FirstOrDefault() returns the first matching element or the default value if none found.",
+      "FirstOrDefault() returns null for reference types and 0 for numeric types when no match.",
+      "FirstOrDefault() is safer and more commonly used to avoid runtime exceptions."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What are Join operations in LINQ?",
+    "answer": [
+      "Join combines two collections based on a matching key, similar to INNER JOIN in SQL.",
+      "It uses the Join() method with outer key, inner key, and result selector parameters.",
+      "GroupJoin performs a left outer join by grouping matching inner elements.",
+      "Joins are used to combine related data from different collections or tables."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is the difference between OrderBy and ThenBy in LINQ?",
+    "answer": [
+      "OrderBy sorts the collection by a primary key in ascending order.",
+      "ThenBy adds a secondary sort after OrderBy for elements with the same primary key.",
+      "OrderByDescending and ThenByDescending sort in descending order.",
+      "ThenBy must always follow OrderBy and cannot be used independently."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the Aggregate operator in LINQ?",
+    "answer": [
+      "Aggregate applies an accumulator function over each element in the collection.",
+      "It reduces a collection to a single value by processing elements sequentially.",
+      "Other aggregate methods include Sum(), Count(), Average(), Min(), and Max().",
+      "Example: numbers.Aggregate((a, b) => a + b) calculates the sum of all numbers."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between Any() and All() in LINQ?",
+    "answer": [
+      "Any() returns true if at least one element matches the given condition.",
+      "All() returns true only if every element in the collection matches the condition.",
+      "Any() without a predicate checks if the collection contains any elements at all.",
+      "Both are useful for validation checks before processing data."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is SelectMany in LINQ?",
+    "answer": [
+      "SelectMany flattens nested collections into a single sequence.",
+      "It projects each element to a collection and merges all results into one list.",
+      "It is useful when each element contains a list and you need all items in one collection.",
+      "Example: departments.SelectMany(d => d.Employees) returns all employees across departments."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between query syntax and method syntax?",
+    "answer": [
+      "Query syntax uses SQL-like keywords such as from, where, select, and orderby.",
+      "Method syntax uses extension methods like Where(), Select(), and OrderBy() with lambda expressions.",
+      "Both produce the same result and are compiled to the same IL code.",
+      "Method syntax is more commonly used in real projects due to its flexibility."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is the Distinct operator in LINQ?",
+    "answer": [
+      "Distinct removes duplicate elements from a collection and returns unique values.",
+      "For primitive types, it compares values directly to identify duplicates.",
+      "For complex types, you need to implement IEqualityComparer or override Equals and GetHashCode.",
+      "DistinctBy() in .NET 6+ allows specifying a key selector for distinct comparison."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the Take and Skip operator in LINQ?",
+    "answer": [
+      "Take(n) returns the first n elements from a collection.",
+      "Skip(n) bypasses the first n elements and returns the remaining ones.",
+      "Together, they are used to implement pagination: Skip((page-1)*size).Take(size).",
+      "Both use deferred execution and are commonly used with OrderBy for consistent results."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between Single() and SingleOrDefault()?",
+    "answer": [
+      "Single() returns the only matching element and throws if none or more than one is found.",
+      "SingleOrDefault() returns the matching element or default if none found, but throws if multiple match.",
+      "Single() is used when you expect exactly one result and want to enforce that.",
+      "SingleOrDefault() is safer when the element might not exist."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is the Zip operator in LINQ?",
+    "answer": [
+      "Zip merges two collections element by element into a new collection.",
+      "It pairs the first element of one collection with the first element of the other.",
+      "The result length equals the shorter collection since extra elements are ignored.",
+      "Example: names.Zip(ages, (n, a) => n + \" is \" + a) combines names with ages."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the Concat and Union operator in LINQ?",
+    "answer": [
+      "Concat combines two collections into one, including duplicate elements.",
+      "Union combines two collections into one but removes duplicates.",
+      "Both return a new collection without modifying the original collections.",
+      "Intersect returns common elements, while Except returns elements in the first but not the second."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is the Let clause in LINQ query syntax?",
+    "answer": [
+      "The let clause introduces a new variable within a query expression to store intermediate results.",
+      "It avoids recalculating the same expression multiple times in the query.",
+      "It improves readability by giving meaningful names to computed values.",
+      "Example: from e in employees let bonus = e.Salary * 0.1 select new { e.Name, bonus }."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What is the ToLookup() method in LINQ?",
+    "answer": [
+      "ToLookup creates a dictionary-like collection where each key maps to multiple values.",
+      "Unlike GroupBy, ToLookup uses immediate execution and caches the grouped results.",
+      "It returns an ILookup<TKey, TElement> which allows quick key-based access.",
+      "It is useful when you need to repeatedly access grouped data without re-querying."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the AsEnumerable() method in LINQ?",
+    "answer": [
+      "AsEnumerable() forces a query to switch from server-side to client-side execution.",
+      "It is used when you want to apply LINQ to Objects operators on an IQueryable source.",
+      "After AsEnumerable(), further LINQ operations run in memory instead of being translated to SQL.",
+      "It is useful when a LINQ expression cannot be translated to SQL by EF Core."
+    ]
+  }
+]

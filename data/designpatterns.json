@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "question": "What is a Design Pattern?",
+    "answer": [
+      "A design pattern is a proven, reusable solution to a commonly occurring software design problem.",
+      "Patterns are categorized into Creational, Structural, and Behavioral types.",
+      "They provide a template for solving problems, not a finished implementation.",
+      "Using design patterns improves code readability, maintainability, and communication among developers."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is the Repository Pattern?",
+    "answer": [
+      "The Repository Pattern abstracts data access logic and provides a clean interface for data operations.",
+      "It separates business logic from database access code.",
+      "It makes the application easier to test by allowing mock repositories in unit tests.",
+      "A generic IRepository<T> interface with methods like GetAll, GetById, Add, Update, and Delete is commonly used."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the Singleton Pattern?",
+    "answer": [
+      "Singleton ensures that a class has only one instance throughout the application.",
+      "It provides a global access point to that single instance.",
+      "The constructor is made private, and a static method or property returns the instance.",
+      "In ASP.NET Core, AddSingleton in DI achieves the same behavior without manual implementation."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What is the Factory Pattern?",
+    "answer": [
+      "The Factory Pattern creates objects without exposing the creation logic to the client.",
+      "A factory method returns an instance of a class based on input parameters or configuration.",
+      "It promotes loose coupling by depending on abstractions rather than concrete classes.",
+      "Example: A NotificationFactory can return EmailNotification or SmsNotification based on input."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What is the Dependency Injection Pattern?",
+    "answer": [
+      "Dependency Injection provides dependencies to a class from the outside rather than creating them inside.",
+      "It supports three types: Constructor Injection, Property Injection, and Method Injection.",
+      "Constructor Injection is the most common and recommended approach.",
+      "ASP.NET Core has a built-in DI container that makes implementing this pattern straightforward."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What is the Unit of Work Pattern?",
+    "answer": [
+      "Unit of Work maintains a list of changes and commits them as a single transaction.",
+      "It coordinates the work of multiple repositories to ensure data consistency.",
+      "DbContext in Entity Framework Core already implements this pattern internally.",
+      "It is often combined with the Repository Pattern for better transaction management."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is the Observer Pattern?",
+    "answer": [
+      "The Observer Pattern defines a one-to-many relationship between objects.",
+      "When the subject changes state, all registered observers are notified automatically.",
+      "In C#, events and delegates are the built-in implementation of the Observer Pattern.",
+      "It is useful for implementing event-driven architectures and notification systems."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is the Strategy Pattern?",
+    "answer": [
+      "The Strategy Pattern defines a family of algorithms and makes them interchangeable.",
+      "It encapsulates each algorithm in a separate class implementing a common interface.",
+      "The client selects the strategy at runtime without changing the context class.",
+      "Example: Different sorting strategies or payment methods can be swapped dynamically."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "What is the Builder Pattern?",
+    "answer": [
+      "The Builder Pattern constructs complex objects step by step.",
+      "It separates the construction process from the representation of the object.",
+      "It is useful when an object has many optional parameters or configurations.",
+      "Example: A QueryBuilder or HttpRequestBuilder that chains methods to build the final object."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What is the Adapter Pattern?",
+    "answer": [
+      "The Adapter Pattern converts the interface of a class into another interface the client expects.",
+      "It allows incompatible interfaces to work together without modifying existing code.",
+      "It acts as a wrapper that translates calls between two incompatible systems.",
+      "Example: An adapter that wraps a third-party payment gateway to match your application's interface."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "What is the Decorator Pattern?",
+    "answer": [
+      "The Decorator Pattern adds new behavior to objects dynamically without modifying their class.",
+      "It wraps an object with a decorator class that implements the same interface.",
+      "Multiple decorators can be stacked to combine different behaviors.",
+      "Example: Adding logging, caching, or retry logic to a service without changing its code."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between Factory and Abstract Factory Pattern?",
+    "answer": [
+      "Factory Pattern creates a single type of object using one factory method.",
+      "Abstract Factory creates families of related objects without specifying concrete classes.",
+      "Abstract Factory is a factory of factories, providing a higher level of abstraction.",
+      "Abstract Factory is useful when the system needs to work with multiple product families."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What is the Mediator Pattern?",
+    "answer": [
+      "The Mediator Pattern reduces direct communication between objects by introducing a mediator.",
+      "Objects communicate through the mediator instead of referencing each other directly.",
+      "It reduces coupling between components and centralizes complex communication logic.",
+      "MediatR is a popular library in .NET that implements this pattern for CQRS."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What is the CQRS Pattern?",
+    "answer": [
+      "CQRS stands for Command Query Responsibility Segregation.",
+      "It separates read operations (queries) from write operations (commands) into different models.",
+      "It improves performance by optimizing reads and writes independently.",
+      "MediatR library is commonly used to implement CQRS in ASP.NET Core applications."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What is the Proxy Pattern?",
+    "answer": [
+      "The Proxy Pattern provides a surrogate or placeholder for another object to control access.",
+      "It adds a layer of control like lazy loading, caching, or access restriction.",
+      "The proxy implements the same interface as the real object.",
+      "Example: A caching proxy that stores results and returns cached data for repeated requests."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What is the difference between Singleton and Static Class?",
+    "answer": [
+      "Singleton can implement interfaces and support dependency injection.",
+      "Static classes cannot implement interfaces or be injected through DI.",
+      "Singleton instance creation can be controlled with lazy initialization.",
+      "Singleton is more flexible and testable compared to a static class."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "What is the Facade Pattern?",
+    "answer": [
+      "The Facade Pattern provides a simplified interface to a complex subsystem.",
+      "It hides the complexity of multiple classes behind a single unified interface.",
+      "Clients interact with the facade instead of dealing with multiple subsystem classes.",
+      "Example: An OrderFacade that internally calls InventoryService, PaymentService, and ShippingService."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What is the Template Method Pattern?",
+    "answer": [
+      "The Template Method defines the skeleton of an algorithm in a base class.",
+      "Subclasses override specific steps without changing the overall algorithm structure.",
+      "It uses abstract or virtual methods for the steps that need customization.",
+      "Example: A report generator where the format varies but the data processing steps remain the same."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "When should you use Design Patterns?",
+    "answer": [
+      "Use patterns when you face a recurring design problem that matches a known pattern.",
+      "Do not force patterns into code just for the sake of using them.",
+      "Apply patterns when they add clarity and reduce complexity, not when they add overhead.",
+      "Understanding the problem first and then selecting the appropriate pattern is the best approach."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What is the difference between Creational, Structural, and Behavioral Patterns?",
+    "answer": [
+      "Creational patterns deal with object creation like Singleton, Factory, and Builder.",
+      "Structural patterns deal with object composition like Adapter, Decorator, and Facade.",
+      "Behavioral patterns deal with communication between objects like Observer, Strategy, and Mediator.",
+      "Each category addresses a different aspect of software design."
+    ]
+  }
+]
