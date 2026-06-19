@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "question": "Swap two numbers without using a third variable",
+    "shortAnswer": "Use addition and subtraction to swap values",
+    "detailedAnswer": "Swap two numbers without using a temporary variable by using addition and subtraction operations.",
+    "code": "Console.Write(\"Enter first number (a): \");\nint a = Convert.ToInt32(Console.ReadLine());\n\nConsole.Write(\"Enter second number (b): \");\nint b = Convert.ToInt32(Console.ReadLine());\n\n// Before swapping\nConsole.WriteLine(\"Before swapping a = \" + a + \" and b = \" + b);\n\n// Swapping using + and -\na = a + b;\nb = a - b;\na = a - b;\n\n// After swapping (ONE LINE)\nConsole.WriteLine(\"After swapping a = \" + a + \" and b = \" + b);\n\nConsole.ReadLine();"
+  },
+  {
+    "id": 2,
+    "question": "Reverse a string",
+    "shortAnswer": "Loop from the last character to the first character.",
+    "detailedAnswer": "Traverse the string from the last index to the first index and print each character.",
+    "code": "Console.Write(\"Enter a string: \");\nstring text = Console.ReadLine();\n\nfor(int i = text.Length - 1; i >= 0; i--)\n{\n    Console.Write(text[i]);\n}"
+  }
+]

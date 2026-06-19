@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "question": "Write a SQL query to find the second highest salary",
+    "shortAnswer": "Use ORDER BY with OFFSET/FETCH or TOP and MAX.",
+    "detailedAnswer": "Sort salaries in descending order and fetch the second highest value.",
+    "code": "SELECT MAX(Salary)\nFROM Employee\nWHERE Salary < (\n    SELECT MAX(Salary)\n    FROM Employee\n);"
+  },
+  {
+    "id": 2,
+    "question": "Write a SQL query to find duplicate records",
+    "shortAnswer": "Use GROUP BY with HAVING COUNT(*) > 1.",
+    "detailedAnswer": "Group records by the required column and filter groups having more than one record.",
+    "code": "SELECT Name, COUNT(*)\nFROM Employee\nGROUP BY Name\nHAVING COUNT(*) > 1;"
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "Find all even numbers using LINQ",
+    "shortAnswer": "Use the Where() method with a modulus condition.",
+    "detailedAnswer": "Filter the collection using Where() and return only numbers divisible by 2.",
+    "code": "List<int> numbers = new List<int>{1,2,3,4,5,6,7,8};\n\nvar result = numbers.Where(x => x % 2 == 0);\n\nforeach(var item in result)\n{\n    Console.WriteLine(item);\n}"
+  },
+  {
+    "id": 2,
+    "question": "Get employee names whose salary is greater than 50000",
+    "shortAnswer": "Use Where() to filter and Select() to return names.",
+    "detailedAnswer": "Filter employees based on salary and project only the Name property.",
+    "code": "var result = employees\n    .Where(x => x.Salary > 50000)\n    .Select(x => x.Name);\n\nforeach(var item in result)\n{\n    Console.WriteLine(item);\n}"
+  },
+  {
+    "id": 3,
+    "question": "Get all employees whose salary is greater than 50,000",
+    "shortAnswer": "Use Where() to filter employees by salary.",
+    "detailedAnswer": "The Where() method filters a collection based on a condition. Here we pass a lambda expression that checks if each employee's Salary property is greater than 50000. ToList() executes the query and returns the result as a List.",
+    "code": "var result = employees\n    .Where(e => e.Salary > 50000)\n    .ToList();\n\nforeach(var emp in result)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  },
+  {
+    "id": 4,
+    "question": "Get employee names only using LINQ",
+    "shortAnswer": "Use Select() to project only the Name property.",
+    "detailedAnswer": "The Select() method is used for projection. It transforms each element in the collection into a new form. Here we select only the Name property from each employee object, returning a collection of strings instead of employee objects.",
+    "code": "var result = employees\n    .Select(e => e.Name)\n    .ToList();\n\nforeach(var name in result)\n{\n    Console.WriteLine(name);\n}"
+  },
+  {
+    "id": 5,
+    "question": "Sort employees by salary in ascending and descending order",
+    "shortAnswer": "Use OrderBy() for ascending and OrderByDescending() for descending.",
+    "detailedAnswer": "OrderBy() sorts the collection in ascending order based on the specified key. OrderByDescending() sorts in descending order. Both methods return an ordered sequence without modifying the original collection.",
+    "code": "// Ascending order\nvar ascending = employees\n    .OrderBy(e => e.Salary)\n    .ToList();\n\n// Descending order\nvar descending = employees\n    .OrderByDescending(e => e.Salary)\n    .ToList();\n\nforeach(var emp in ascending)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  },
+  {
+    "id": 6,
+    "question": "Get top 3 highest paid employees",
+    "shortAnswer": "Use OrderByDescending() with Take(3).",
+    "detailedAnswer": "First sort the employees by salary in descending order using OrderByDescending(). Then use Take(3) to pick only the first 3 records from the sorted result. This gives us the top 3 highest paid employees.",
+    "code": "var result = employees\n    .OrderByDescending(e => e.Salary)\n    .Take(3)\n    .ToList();\n\nforeach(var emp in result)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  },
+  {
+    "id": 7,
+    "question": "Get the first employee from the collection",
+    "shortAnswer": "Use FirstOrDefault() to safely get the first element.",
+    "detailedAnswer": "FirstOrDefault() returns the first element of a collection. If the collection is empty, it returns null for reference types or the default value for value types. This is safer than First() which throws an exception if the collection is empty.",
+    "code": "var firstEmployee = employees.FirstOrDefault();\n\nif(firstEmployee != null)\n{\n    Console.WriteLine(firstEmployee.Name + \" - \" + firstEmployee.Salary);\n}\nelse\n{\n    Console.WriteLine(\"No employee found.\");\n}"
+  },
+  {
+    "id": 8,
+    "question": "Check whether any employee exists with salary greater than 100000",
+    "shortAnswer": "Use Any() with a condition to check existence.",
+    "detailedAnswer": "The Any() method returns a boolean value. It checks if at least one element in the collection satisfies the given condition. It stops as soon as it finds the first match, making it efficient for existence checks.",
+    "code": "bool exists = employees.Any(e => e.Salary > 100000);\n\nif(exists)\n{\n    Console.WriteLine(\"Yes, high-salary employee exists.\");\n}\nelse\n{\n    Console.WriteLine(\"No employee found with salary > 100000.\");\n}"
+  },
+  {
+    "id": 9,
+    "question": "Count total number of employees",
+    "shortAnswer": "Use Count() to get the total count.",
+    "detailedAnswer": "The Count() method returns the total number of elements in a collection. You can also pass a condition to count only specific elements, for example employees.Count(e => e.Salary > 50000) counts only employees with salary above 50000.",
+    "code": "int totalEmployees = employees.Count();\n\nConsole.WriteLine(\"Total Employees: \" + totalEmployees);\n\n// Count with condition\nint highPaid = employees.Count(e => e.Salary > 50000);\nConsole.WriteLine(\"High Paid Employees: \" + highPaid);"
+  },
+  {
+    "id": 10,
+    "question": "Get the maximum salary from employees",
+    "shortAnswer": "Use Max() to find the highest salary.",
+    "detailedAnswer": "The Max() method returns the maximum value from a collection. When used with a lambda expression like Max(e => e.Salary), it evaluates the Salary property of each employee and returns the highest value.",
+    "code": "var maxSalary = employees.Max(e => e.Salary);\n\nConsole.WriteLine(\"Maximum Salary: \" + maxSalary);"
+  },
+  {
+    "id": 11,
+    "question": "Get the minimum salary from employees",
+    "shortAnswer": "Use Min() to find the lowest salary.",
+    "detailedAnswer": "The Min() method returns the minimum value from a collection. When used with a lambda expression like Min(e => e.Salary), it evaluates the Salary property of each employee and returns the lowest value.",
+    "code": "var minSalary = employees.Min(e => e.Salary);\n\nConsole.WriteLine(\"Minimum Salary: \" + minSalary);"
+  },
+  {
+    "id": 12,
+    "question": "Get the average salary of all employees",
+    "shortAnswer": "Use Average() to calculate the mean salary.",
+    "detailedAnswer": "The Average() method calculates the arithmetic mean of numeric values in a collection. When used with a lambda expression, it computes the average of the specified property across all elements.",
+    "code": "var avgSalary = employees.Average(e => e.Salary);\n\nConsole.WriteLine(\"Average Salary: \" + avgSalary);"
+  },
+  {
+    "id": 13,
+    "question": "Group employees by department",
+    "shortAnswer": "Use GroupBy() to group employees based on the Department property.",
+    "detailedAnswer": "The GroupBy() method groups elements that share a common key. It returns a collection of IGrouping objects where each group has a Key and contains all elements matching that key. This is similar to SQL GROUP BY.",
+    "code": "var groups = employees.GroupBy(e => e.Department);\n\nforeach(var group in groups)\n{\n    Console.WriteLine(\"Department: \" + group.Key);\n    foreach(var emp in group)\n    {\n        Console.WriteLine(\"  \" + emp.Name + \" - \" + emp.Salary);\n    }\n}"
+  },
+  {
+    "id": 14,
+    "question": "Find duplicate numbers in a list using LINQ",
+    "shortAnswer": "Use GroupBy() with Where() to find elements appearing more than once.",
+    "detailedAnswer": "Group all numbers by their value using GroupBy(). Then filter groups that have a count greater than 1 using Where(). Finally, use Select() to pick only the key (the duplicate number) from each group.",
+    "code": "List<int> numbers = new List<int>{1, 2, 3, 2, 4, 3, 5};\n\nvar duplicates = numbers\n    .GroupBy(x => x)\n    .Where(g => g.Count() > 1)\n    .Select(g => g.Key)\n    .ToList();\n\nforeach(var item in duplicates)\n{\n    Console.WriteLine(item);\n}\n// Output: 2, 3"
+  },
+  {
+    "id": 15,
+    "question": "Remove duplicate values from a list using LINQ",
+    "shortAnswer": "Use Distinct() to remove duplicates.",
+    "detailedAnswer": "The Distinct() method returns only unique elements from a collection by removing all duplicate values. It uses the default equality comparer to determine duplicates. For custom objects, you may need to implement IEqualityComparer.",
+    "code": "List<int> numbers = new List<int>{1, 2, 3, 2, 4, 3, 5};\n\nvar uniqueNumbers = numbers\n    .Distinct()\n    .ToList();\n\nforeach(var item in uniqueNumbers)\n{\n    Console.WriteLine(item);\n}\n// Output: 1, 2, 3, 4, 5"
+  },
+  {
+    "id": 16,
+    "question": "Join two collections using LINQ",
+    "shortAnswer": "Use Join() to combine two collections based on a common key.",
+    "detailedAnswer": "The Join() method performs an inner join between two collections. It takes four parameters: the second collection, the key selector for the first collection, the key selector for the second collection, and a result selector that defines the output shape. This is equivalent to SQL INNER JOIN.",
+    "code": "var result = employees.Join(\n    departments,\n    e => e.DepartmentId,\n    d => d.Id,\n    (e, d) => new\n    {\n        EmployeeName = e.Name,\n        DepartmentName = d.Name\n    });\n\nforeach(var item in result)\n{\n    Console.WriteLine(item.EmployeeName + \" - \" + item.DepartmentName);\n}"
+  },
+  {
+    "id": 17,
+    "question": "Get the second highest salary using LINQ",
+    "shortAnswer": "Use Distinct(), OrderByDescending(), Skip(1) and FirstOrDefault().",
+    "detailedAnswer": "First use Distinct() to remove duplicate salary values. Then sort in descending order using OrderByDescending(). Skip the first record using Skip(1) and take the next one using FirstOrDefault(). This gives the second highest unique salary.",
+    "code": "var secondHighest = employees\n    .Select(e => e.Salary)\n    .Distinct()\n    .OrderByDescending(s => s)\n    .Skip(1)\n    .FirstOrDefault();\n\nConsole.WriteLine(\"Second Highest Salary: \" + secondHighest);"
+  },
+  {
+    "id": 18,
+    "question": "Get employees whose name starts with a specific letter",
+    "shortAnswer": "Use Where() with StartsWith() string method.",
+    "detailedAnswer": "The Where() method filters the collection and the StartsWith() string method checks if a string begins with the specified character or substring. This is case-sensitive by default. For case-insensitive matching, use StringComparison.OrdinalIgnoreCase.",
+    "code": "var result = employees\n    .Where(e => e.Name.StartsWith(\"R\"))\n    .ToList();\n\nforeach(var emp in result)\n{\n    Console.WriteLine(emp.Name);\n}"
+  },
+  {
+    "id": 19,
+    "question": "Get employees whose name contains specific text",
+    "shortAnswer": "Use Where() with Contains() string method.",
+    "detailedAnswer": "The Contains() string method checks if a string includes the specified substring anywhere within it. Combined with Where(), it filters the collection to return only elements that contain the search text in the specified property.",
+    "code": "var result = employees\n    .Where(e => e.Name.Contains(\"tu\"))\n    .ToList();\n\nforeach(var emp in result)\n{\n    Console.WriteLine(emp.Name);\n}"
+  },
+  {
+    "id": 20,
+    "question": "Skip first 5 records from a collection",
+    "shortAnswer": "Use Skip() to bypass the first N elements.",
+    "detailedAnswer": "The Skip() method bypasses a specified number of elements from the beginning of a collection and returns the remaining elements. It is commonly used together with Take() for pagination scenarios.",
+    "code": "var result = employees\n    .Skip(5)\n    .ToList();\n\nforeach(var emp in result)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  },
+  {
+    "id": 21,
+    "question": "Implement pagination using LINQ",
+    "shortAnswer": "Use Skip() and Take() to fetch records page by page.",
+    "detailedAnswer": "Pagination is achieved by combining Skip() and Take(). Skip((pageNumber-1) * pageSize) skips all records before the current page. Take(pageSize) then picks only the required number of records for that page. This is the standard pattern for implementing pagination in .NET applications.",
+    "code": "int pageNumber = 2;\nint pageSize = 10;\n\nvar pagedResult = employees\n    .Skip((pageNumber - 1) * pageSize)\n    .Take(pageSize)\n    .ToList();\n\nforeach(var emp in pagedResult)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  },
+  {
+    "id": 22,
+    "question": "Get unique departments from employees collection",
+    "shortAnswer": "Use Select() with Distinct() to get unique department names.",
+    "detailedAnswer": "First project only the Department property using Select(). Then apply Distinct() to remove duplicate department names. This returns a list of unique department values from the entire employee collection.",
+    "code": "var uniqueDepartments = employees\n    .Select(e => e.Department)\n    .Distinct()\n    .ToList();\n\nforeach(var dept in uniqueDepartments)\n{\n    Console.WriteLine(dept);\n}"
+  },
+  {
+    "id": 23,
+    "question": "What is the difference between IEnumerable and IQueryable?",
+    "shortAnswer": "IEnumerable works in-memory, IQueryable translates queries to the data source like SQL.",
+    "detailedAnswer": "IEnumerable loads all data into memory first and then applies filters using LINQ to Objects. IQueryable builds an expression tree and translates the query to the data source level (like SQL for databases). IQueryable is better for database queries because it sends only the filtered query to the server, reducing data transfer and improving performance. Use IEnumerable for in-memory collections and IQueryable for database operations with Entity Framework.",
+    "code": "// IEnumerable - executes in memory\nIEnumerable<Employee> result1 = dbContext.Employees\n    .AsEnumerable()\n    .Where(e => e.Salary > 50000);\n// Loads ALL employees into memory, then filters\n\n// IQueryable - executes at database level\nIQueryable<Employee> result2 = dbContext.Employees\n    .Where(e => e.Salary > 50000);\n// Generates SQL: SELECT * FROM Employees WHERE Salary > 50000"
+  },
+  {
+    "id": 24,
+    "question": "What is the difference between First() and FirstOrDefault()?",
+    "shortAnswer": "First() throws an exception if no element is found. FirstOrDefault() returns null or default value.",
+    "detailedAnswer": "First() returns the first element matching the condition. If no element is found, it throws an InvalidOperationException. FirstOrDefault() also returns the first matching element, but if no element is found, it returns the default value (null for reference types, 0 for int, false for bool). FirstOrDefault() is safer and more commonly used in production code to avoid runtime exceptions.",
+    "code": "// First() - throws exception if empty\ntry\n{\n    var emp = employees.First(e => e.Salary > 500000);\n    Console.WriteLine(emp.Name);\n}\ncatch(InvalidOperationException ex)\n{\n    Console.WriteLine(\"No element found!\");\n}\n\n// FirstOrDefault() - returns null if empty\nvar emp2 = employees.FirstOrDefault(e => e.Salary > 500000);\nif(emp2 != null)\n    Console.WriteLine(emp2.Name);\nelse\n    Console.WriteLine(\"No employee found.\");"
+  },
+  {
+    "id": 25,
+    "question": "What is the difference between Single() and SingleOrDefault()?",
+    "shortAnswer": "Single() expects exactly one match and throws if zero or multiple found. SingleOrDefault() returns default for zero matches.",
+    "detailedAnswer": "Single() returns the only element that matches the condition. It throws an InvalidOperationException if no element or more than one element is found. SingleOrDefault() returns the default value when no element is found but still throws an exception if more than one element matches. Use Single() when you are certain exactly one record exists. Use SingleOrDefault() when zero or one record is expected.",
+    "code": "// Single() - expects exactly one match\nvar emp1 = employees.Single(e => e.Id == 101);\nConsole.WriteLine(emp1.Name);\n\n// SingleOrDefault() - returns null if not found\nvar emp2 = employees.SingleOrDefault(e => e.Id == 999);\nif(emp2 != null)\n    Console.WriteLine(emp2.Name);\nelse\n    Console.WriteLine(\"Employee not found.\");\n\n// Both throw exception if multiple matches found"
+  },
+  {
+    "id": 26,
+    "question": "What is the difference between Select() and SelectMany()?",
+    "shortAnswer": "Select() returns a collection of collections. SelectMany() flattens nested collections into one list.",
+    "detailedAnswer": "Select() performs a one-to-one projection, meaning each input element maps to one output element. If the property is itself a collection, Select() returns a collection of collections (nested). SelectMany() flattens these nested collections into a single flat sequence. Use SelectMany() when you need to work with properties that are lists or arrays inside each object.",
+    "code": "// Example: Each department has a list of employees\nvar departments = new List<Department>\n{\n    new Department { Name = \"IT\", Employees = new List<string>{\"John\",\"Jane\"} },\n    new Department { Name = \"HR\", Employees = new List<string>{\"Mike\",\"Sara\"} }\n};\n\n// Select() - returns List<List<string>>\nvar nested = departments.Select(d => d.Employees);\n\n// SelectMany() - returns flat List<string>\nvar flat = departments.SelectMany(d => d.Employees);\n\nforeach(var name in flat)\n{\n    Console.WriteLine(name);\n}\n// Output: John, Jane, Mike, Sara"
+  },
+  {
+    "id": 27,
+    "question": "What is Deferred Execution in LINQ?",
+    "shortAnswer": "The query does not execute when defined. It executes only when the data is actually accessed.",
+    "detailedAnswer": "Deferred execution means the LINQ query is not executed at the point of declaration. The query is stored as an expression and only executes when you iterate over the result using foreach, or call methods like ToList(), ToArray(), Count(), or First(). This improves performance because the query can be modified before execution and only runs when results are needed.",
+    "code": "List<int> numbers = new List<int>{1, 2, 3, 4, 5};\n\n// Query is defined but NOT executed yet\nvar query = numbers.Where(x => x > 2);\n\n// Adding a new item before execution\nnumbers.Add(6);\n\n// Query executes NOW during foreach\nforeach(var item in query)\n{\n    Console.WriteLine(item);\n}\n// Output: 3, 4, 5, 6 (includes 6 because query runs here)"
+  },
+  {
+    "id": 28,
+    "question": "What is Immediate Execution in LINQ?",
+    "shortAnswer": "The query executes immediately using methods like ToList(), Count(), or First().",
+    "detailedAnswer": "Immediate execution forces the LINQ query to run right away and store the result. Methods like ToList(), ToArray(), Count(), First(), Max(), Min(), Average(), and Sum() trigger immediate execution. Once executed, the result is stored in memory and does not change even if the source collection is modified later. Use immediate execution when you need the result right away or want to avoid re-evaluation.",
+    "code": "List<int> numbers = new List<int>{1, 2, 3, 4, 5};\n\n// Immediate execution using ToList()\nvar result = numbers.Where(x => x > 2).ToList();\n\n// Adding a new item after execution\nnumbers.Add(6);\n\nforeach(var item in result)\n{\n    Console.WriteLine(item);\n}\n// Output: 3, 4, 5 (does NOT include 6 because query already executed)"
+  },
+  {
+    "id": 29,
+    "question": "How to find Nth highest salary using LINQ?",
+    "shortAnswer": "Use Distinct(), OrderByDescending(), Skip(N-1) and FirstOrDefault().",
+    "detailedAnswer": "To find the Nth highest salary, first remove duplicate salaries using Distinct(). Then sort in descending order using OrderByDescending(). Skip the first (N-1) records using Skip() and pick the next one using FirstOrDefault(). For example, to find the 3rd highest salary, skip 2 records and take the next one.",
+    "code": "int n = 3; // Find 3rd highest salary\n\nvar nthHighest = employees\n    .Select(e => e.Salary)\n    .Distinct()\n    .OrderByDescending(s => s)\n    .Skip(n - 1)\n    .FirstOrDefault();\n\nConsole.WriteLine(n + \"rd Highest Salary: \" + nthHighest);"
+  },
+  {
+    "id": 30,
+    "question": "How to implement pagination using Skip() and Take() in LINQ?",
+    "shortAnswer": "Use Skip() to bypass previous pages and Take() to fetch the current page records.",
+    "detailedAnswer": "Pagination allows fetching records page by page instead of loading all at once. The formula is Skip((pageNumber - 1) * pageSize).Take(pageSize). Skip() bypasses records of all previous pages and Take() picks only the number of records needed for the current page. This pattern is widely used in APIs and web applications for efficient data loading.",
+    "code": "// Pagination helper method\nint pageNumber = 3;\nint pageSize = 5;\n\n// Page 1: Skip(0).Take(5) -> records 1-5\n// Page 2: Skip(5).Take(5) -> records 6-10\n// Page 3: Skip(10).Take(5) -> records 11-15\n\nvar pagedData = employees\n    .Skip((pageNumber - 1) * pageSize)\n    .Take(pageSize)\n    .ToList();\n\nConsole.WriteLine(\"Page \" + pageNumber + \" Results:\");\nforeach(var emp in pagedData)\n{\n    Console.WriteLine(emp.Name + \" - \" + emp.Salary);\n}"
+  }
+]
