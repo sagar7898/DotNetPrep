@@ -24,7 +24,7 @@
 	<title>DotNetPrep | Rensova</title>
 
 	<link href="css/app.css" rel="stylesheet">
-
+	<link href="css/prism-tomorrow.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
 		  rel="stylesheet">
 
@@ -51,7 +51,6 @@
 							<span class="align-middle">Dashboard</span>
 						</a>
 					</li>
-
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="csharp.html">
@@ -116,14 +115,14 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="hrquestions.html">
 							<i data-feather="users"></i>
 							<span class="align-middle">HR Questions</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="codingpractice.html">
 							<i data-feather="terminal"></i>
 							<span class="align-middle">Coding Practice</span>
@@ -168,7 +167,7 @@
 						<input type="text"
 							   class="form-control me-3"
 							   id="searchQuestion"
-							   placeholder="Search Questions..."
+							   placeholder="Search Coding Questions..."
 							   style="width:300px;">
 					</div>
 
@@ -179,10 +178,83 @@
 			<main class="content">
 				<div class="container-fluid p-4">
 
-					<h1 class="h3 mb-4">HR Interview Questions</h1>
+					<h1 class="h3 mb-4">Coding Practice</h1>
 
-					<div id="questionContainer"
-						 data-file="hrquestions.json">
+					<div class="card">
+
+						<div class="card-header pb-0">
+
+							<ul class="nav nav-tabs card-header-tabs" id="codingTabs" role="tablist">
+
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active"
+											id="csharp-tab"
+											data-bs-toggle="tab"
+											data-bs-target="#csharp"
+											type="button">
+										C#
+									</button>
+								</li>
+
+								<li class="nav-item" role="presentation">
+									<button class="nav-link"
+											id="linq-tab"
+											data-bs-toggle="tab"
+											data-bs-target="#linq"
+											type="button">
+										LINQ Queries
+									</button>
+								</li>
+
+								<li class="nav-item" role="presentation">
+									<button class="nav-link"
+											id="sql-tab"
+											data-bs-toggle="tab"
+											data-bs-target="#sql"
+											type="button">
+										SQL Queries
+									</button>
+								</li>
+
+							</ul>
+
+						</div>
+						
+						<div class="card-body">
+
+							<div class="tab-content">
+
+								<!-- C# -->
+
+								<div class="tab-pane fade show active"
+									 id="csharp">
+
+									<div id="csharpContainer"></div>
+
+								</div>
+
+								<!-- LINQ -->
+
+								<div class="tab-pane fade"
+									 id="linq">
+
+									<div id="linqContainer"></div>
+
+								</div>
+
+								<!-- SQL -->
+
+								<div class="tab-pane fade"
+									 id="sql">
+
+									<div id="sqlContainer"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
 					</div>
 
 				</div>
@@ -217,7 +289,8 @@
 			</footer>
 		</div>
 	</div>
-	<script src="js/questions.js"></script>
+	<script src="js/coding-practice.js"></script>
+	<script src="js/prism.js"></script>
 	<script src="js/app.js"></script>
 
 </body>
