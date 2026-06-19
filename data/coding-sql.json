@@ -12,5 +12,101 @@
     "shortAnswer": "Use GROUP BY with HAVING COUNT(*) > 1.",
     "detailedAnswer": "Group records by the required column and filter groups having more than one record.",
     "code": "SELECT Name, COUNT(*)\nFROM Employee\nGROUP BY Name\nHAVING COUNT(*) > 1;"
+  },
+  {
+    "id": 3,
+    "category": "SQL",
+    "question": "Write a query to get the second highest salary",
+    "shortAnswer": "Use MAX with subquery",
+    "detailedAnswer": "Find the maximum salary that is less than the overall maximum salary using a subquery.",
+    "query": "SELECT MAX(salary) AS second_highest_salary\nFROM employees\nWHERE salary < (SELECT MAX(salary) FROM employees);"
+  },
+  {
+    "id": 4,
+    "category": "SQL",
+    "question": "Write a query to get the nth highest salary",
+    "shortAnswer": "Use ORDER BY with OFFSET FETCH",
+    "detailedAnswer": "Sort salaries in descending order and skip N-1 rows, then fetch the next row.",
+    "query": "SELECT DISTINCT salary\nFROM employees\nORDER BY salary DESC\nOFFSET (N-1) ROWS\nFETCH NEXT 1 ROW ONLY;"
+  },
+  {
+    "id": 5,
+    "category": "SQL",
+    "question": "Write a query to find duplicate records in a table",
+    "shortAnswer": "Use GROUP BY and HAVING",
+    "detailedAnswer": "Group records by column and filter those having count greater than 1.",
+    "query": "SELECT email, COUNT(*)\nFROM employees\nGROUP BY email\nHAVING COUNT(*) > 1;"
+  },
+  {
+    "id": 6,
+    "category": "SQL",
+    "question": "Write a query to delete duplicate records but keep only one",
+    "shortAnswer": "Use NOT IN with MIN(id)",
+    "detailedAnswer": "Keep the minimum id for each group and delete all other duplicate records.",
+    "query": "DELETE FROM employees\nWHERE id NOT IN (\nSELECT MIN(id)\nFROM employees\nGROUP BY email );"
+  },
+  {
+    "id": 7,
+    "category": "SQL",
+    "question": "Write a query to get employee count per department",
+    "shortAnswer": "Use GROUP BY with COUNT",
+    "detailedAnswer": "Group employees by department and count the number of employees in each department.",
+    "query": "SELECT department, COUNT(*) AS employee_count\nFROM employees\nGROUP BY department;"
+  },
+  {
+    "id": 8,
+    "category": "SQL",
+    "question": "Write a query to find employees who joined in the last 30 days",
+    "shortAnswer": "Use DATEADD and GETDATE",
+    "detailedAnswer": "Filter employees whose joining date is within the last 30 days using DATEADD and GETDATE functions.",
+    "query": "SELECT *\nFROM employees\nWHERE joining_date >= DATEADD(DAY, -30, GETDATE());"
+  },
+  {
+    "id": 107,
+    "category": "SQL",
+    "question": "Write a query to fetch employees with a salary greater than the average salary",
+    "shortAnswer": "Use subquery with AVG",
+    "detailedAnswer": "Compare employee salary with average salary using a subquery.",
+    "query": "SELECT *\nFROM employees\nWHERE salary > (\nSELECT AVG(salary)\nFROM employees );"
+  },
+  {
+    "id": 9,
+    "category": "SQL",
+    "question": "Write a query to fetch employees whose name starts with 'A'",
+    "shortAnswer": "Use LIKE operator",
+    "detailedAnswer": "Use LIKE 'A%' to filter names starting with A.",
+    "query": "SELECT *\nFROM employees\nWHERE name LIKE 'A%';"
+  },
+  {
+    "id": 10,
+    "category": "SQL",
+    "question": "Write a query to find employees with NULL values in phone number",
+    "shortAnswer": "Use IS NULL",
+    "detailedAnswer": "Filter records where phone_number is NULL.",
+    "query": "SELECT *\nFROM employees\nWHERE phone_number IS NULL;"
+  },
+  {
+    "id": 11,
+    "category": "SQL",
+    "question": "Write a query to get top 5 highest salaries",
+    "shortAnswer": "Use TOP with ORDER BY",
+    "detailedAnswer": "Sort salaries in descending order and fetch top 5 distinct values.",
+    "query": "SELECT DISTINCT TOP 5 salary\nFROM employees\nORDER BY salary DESC;"
+  },
+  {
+    "id": 12,
+    "category": "SQL",
+    "question": "Write a query to find employees who do not belong to any department",
+    "shortAnswer": "Use NOT EXISTS",
+    "detailedAnswer": "Find employees whose department_id does not match any department.",
+    "query": "SELECT *\nFROM employees e\nWHERE NOT EXISTS (\nSELECT 1\nFROM departments d\nWHERE d.department_id = e.department_id );"
+  },
+  {
+    "id": 13,
+    "category": "SQL",
+    "question": "Write a query to find total salary paid department-wise",
+    "shortAnswer": "Use GROUP BY with SUM",
+    "detailedAnswer": "Group employees by department and calculate total salary using SUM.",
+    "query": "SELECT department, SUM(salary) AS total_salary\nFROM employees\nGROUP BY department;"
   }
 ]
